@@ -1,5 +1,5 @@
 # YouTube-video-summary-maker-Telegram-bot
-I did my own bot to generate 7 insights from videos I watch on YouTube (I love watching podcast or editorial videos and often uses GPT to highlight insights, but it has limits in tokens and takes time, cannot parse videos and is not free) 
+I built my own bot to generate 7 key insights from videos I watch on YouTube. I love watching podcasts and editorial videos, but using GPT alone has limitations: token limits, no direct video parsing, and cost. So I created this tool to automate and speed up the process for myself.
 
 
 Go check it out :)
