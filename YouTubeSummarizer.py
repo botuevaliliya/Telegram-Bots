@@ -5,6 +5,7 @@ from youtube_transcript_api import YouTubeTranscriptApi
 from youtube_transcript_api.formatters import TextFormatter
 from youtube_transcript_api._errors import NoTranscriptFound, TranscriptsDisabled
 from langdetect import detect
+import urllib.parse
 
 TOKEN='your_token' #get it from @BotFather
 bot = telebot.TeleBot(TOKEN)
@@ -20,7 +21,14 @@ def handle_youtube_url(message):
     bot.reply_to(message, "Processing...")
 
     try:
-        video_id = url.split("v=")[1].split("&")[0] if "v=" in url else url.split("/")[-1] if "youtu.be" in url else None
+        parsed_url = urllib.parse.urlparse(url)
+        query = urllib.parse.parse_qs(parsed_url.query)
+        if "v" in query:
+            video_id = query["v"][0]
+        elif "youtu.be" in parsed_url.netloc:
+            video_id = parsed_url.path.split("/")[1].split("?")[0]
+        else:
+            video_id = None
         transcript_list = YouTubeTranscriptApi.list_transcripts(video_id)
         try:
             transcript = transcript_list.find_transcript(['ru', 'en']).fetch()
