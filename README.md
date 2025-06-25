@@ -15,3 +15,6 @@ Go check it out :)
 <img width="580" alt="Screenshot 2025-06-24 at 11 30 54 PM" src="https://github.com/user-attachments/assets/a70df31b-ffe8-4161-8913-471042725dbb" />
 
 <img width="575" alt="Screenshot 2025-06-24 at 11 32 46 PM" src="https://github.com/user-attachments/assets/0d8f3ce0-bdd6-40b2-87c8-3688ad5db411" />
+
+<img width="581" alt="Screenshot 2025-06-24 at 11 36 29 PM" src="https://github.com/user-attachments/assets/f66c3bd7-1df0-4ff0-9b67-94b1f4ccbba1" />
+(okey just experimenting and testing capabilities hah) 
