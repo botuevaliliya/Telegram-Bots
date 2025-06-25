@@ -22,13 +22,10 @@ def handle_youtube_url(message):
     try:
         video_id = url.split("v=")[1].split("&")[0] if "v=" in url else url.split("/")[-1] if "youtu.be" in url else None
         transcript_list = YouTubeTranscriptApi.list_transcripts(video_id)
-        transcript = (
-                transcript_list.find_transcript(['ru']).fetch()
-                if transcript_list.find_transcript(['ru']) else
-                transcript_list.find_transcript(['en']).fetch()
-                if transcript_list.find_transcript(['en']) else
-                transcript_list.find_generated_transcript(['ru', 'en']).fetch()
-            )
+        try:
+            transcript = transcript_list.find_transcript(['ru', 'en']).fetch()
+        except NoTranscriptFound:
+            transcript = transcript_list.find_generated_transcript(['ru', 'en']).fetch()
 
         max_seconds=1200
         chunks, current_text, chunk_start = [], "", 0
