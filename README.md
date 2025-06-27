@@ -1,20 +1,42 @@
 # YouTube-video-summary-maker-Telegram-bot
-I built my own bot to generate 7 key insights from videos I watch on YouTube. I love watching podcasts and editorial videos, but using GPT alone has limitations: token limits, no direct video parsing, and cost. So I created this tool to automate and speed up the process for myself.
-
-It also convenient to store notes in one place - Go check it out :)
-
-@lb_youtube_insights_bot (https://t.me/lb_youtube_insights_bot)
 
 
-(I think it works really well)
+### YouTube Insight Bot
+A Telegram bot that gives **7 key insights** from any YouTube video using transcripts + a local LLM (via Ollama). Designed for fast, private summarization of podcasts, lectures, and long-form content.
 
-<img width="589" alt="Screenshot 2025-06-24 at 10 38 13 PM" src="https://github.com/user-attachments/assets/61f3964b-25cf-4be1-b81f-bfe441efbb64" />
+### How It Works
+1. Send a YouTube link to the bot
+2. It fetches the transcript (English or Russian)
+3. Splits it into \~20-minute chunks
+4. Uses a local LLM (`mistral`) via Ollama to summarize
+5. Returns a final 7-point summary in Telegram
 
-<img width="586" alt="Screenshot 2025-06-24 at 10 37 50 PM" src="https://github.com/user-attachments/assets/945dc99d-1f0c-4e27-9c26-cb4333061040" />
+### Tech
+* Python, Telegram Bot API (`telebot`)
+* `youtube-transcript-api`, `langdetect`, `ollama`
+* Runs entirely **locally** (no OpenAI API needed)
 
-<img width="580" alt="Screenshot 2025-06-24 at 11 30 54 PM" src="https://github.com/user-attachments/assets/a70df31b-ffe8-4161-8913-471042725dbb" />
+### Setup
+1. Install dependencies:
 
-<img width="575" alt="Screenshot 2025-06-24 at 11 32 46 PM" src="https://github.com/user-attachments/assets/0d8f3ce0-bdd6-40b2-87c8-3688ad5db411" />
+   ```bash
+   pip install pyTelegramBotAPI youtube-transcript-api langdetect
+   ```
+2. Run Ollama with `mistral`:
 
-<img width="581" alt="Screenshot 2025-06-24 at 11 36 29 PM" src="https://github.com/user-attachments/assets/f66c3bd7-1df0-4ff0-9b67-94b1f4ccbba1" />
-(okey just experimenting and testing capabilities hah) 
+   ```bash
+   ollama run mistral
+   ```
+3. Add your Telegram bot token in the script
+4. Launch:
+
+   ```bash
+   python main.py
+   ```
+
+---
+
+### Why
+
+I watch long videos and want **fast, high-level summaries** without token limits or cost. This bot solves that by automating insight extraction locally — all stored in one place (Telegram).
+
