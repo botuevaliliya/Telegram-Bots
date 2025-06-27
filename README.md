@@ -40,3 +40,40 @@ A Telegram bot that gives **7 key insights** from any YouTube video using transc
 
 I watch long videos and want **fast, high-level summaries** without token limits or cost. This bot solves that by automating insight extraction locally — all stored in one place (Telegram).
 
+
+# GRE_prep
+A Telegram bot that helps you memorize GRE-level vocabulary through fast-paced quizzes.
+It was built to turn frustrating C2 English prep into an interactive, low-effort game you can play anywhere.
+
+### Features
+Quiz-based vocabulary learning (word → definition or definition → word)
+4-answer multiple-choice format
+Randomized options with feedback
+Designed for repeat, low-friction study sessions
+
+### Tech
+Python + Telegram Bot API
+Excel vocabulary dataset (GRE prep.xlsx)
+Uses telebot and pandas
+
+### Why
+GRE prep is boring. This bot makes it quick, repeatable, and a bit more fun — right from your phone.
+
+# Random Coffee Chat Bot
+A Telegram bot that powers serendipitous weekly meetups by randomly matching users for one-on-one chats.
+Built for a hackathon (in 1 hour!), it aims to make community networking feel organic and light.
+
+### How It Works
+Users register with name, interests, and specialty
+Each Monday, the bot matches them randomly
+Both users get each other's Telegram + bio to arrange a chat
+
+### Tech
+Python + telebot
+CSV-based user storage (pandas)
+Simple pairing logic, 100% automated
+Can be extended to include timezone logic or group matching
+
+### Why
+Random Coffee is a proven way to spark ideas, friendships, and surprising connections.
+This bot makes it easy for any local community to adopt the concept.
